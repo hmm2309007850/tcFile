@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="initial-scale=1,maximum-scale=1, minimum-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="../css/jquery.mobile-1.4.5.css">
+    <link rel="stylesheet" href="../css/login.css">
+    <script src="../js/jquery.min.js"></script>
+    <script src="../js/jquery.mobile-1.4.5.js"></script>
+    <script src="../js/index.js"></script>
+    <script>
+        var docEl = document.documentElement,
+        resizeEvt = 'orientationchange' in window ? 'orientationchange' : 'resize';
+        var clientWidth = docEl.clientWidth;
+        docEl.style.fontSize = 10 * (clientWidth / 760) + 'px';
+        window.addEventListener(resizeEvt, function() { clientWidth = docEl.clientWidth;docEl.style.fontSize = 10 * (clientWidth / 760) + 'px'; }, false);
+
+        // document.documentElement.style.fontSize = document.documentElement.clientWidth / 760*100 + 'px';
+    </script>
+</head>
+<body>
+	<div data-role="page" class="page">
+		<div data-role="header" class="header">
+			<h1>
+					<img src="../img/login/logo.png" alt="">
+			</h1>
+		</div>
+		<div data-role="main" class="ui-content">
+			<form>
+				<input type="text" placeholder="手机号码">
+                <input type="password" placeholder="短信验证码">
+				<!-- <p class="ruler">请使用6-20位，数字和字母的组合作为密码</p> -->
+				<!-- <input type="button" value="登录" class="submit"> -->
+				<button id="regist" type="button">下一步</button>
+			</form>
+		</div>
+	</div>
+</body>
+</html>

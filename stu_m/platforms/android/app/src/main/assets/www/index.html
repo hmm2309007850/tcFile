@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="initial-scale=1.0, maximum-scale=1, minimum-scale=1">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <link rel="stylesheet" href="css/jquery.mobile-1.4.5.css">
+  <link rel="stylesheet" href="css/style.css">
+  <script src="js/jquery.min.js"></script>
+  <script src="js/jquery.mobile-1.4.5.js"></script>
+  <script src="js/index.js"></script>
+  <script src="cordova.js"></script>
+</head>
+<body>
+  <script>
+    var docEl = document.documentElement,
+    resizeEvt = 'orientationchange' in window ? 'orientationchange' : 'resize';
+    var clientWidth = docEl.clientWidth;
+    docEl.style.fontSize = 10 * (clientWidth / 750) + 'px';
+    window.addEventListener(resizeEvt, function() { clientWidth = docEl.clientWidth;docEl.style.fontSize = 10 * (clientWidth / 750) + 'px'; }, false);
+
+  </script>
+  <div data-role="page" id="page">
+    <!-- 头部 -->
+    <div data-role="header" class="header">
+      <h1>
+        <img src="img/logo.png" alt="">
+        <a href="#">
+          <img src="img/头像.png" alt="">
+        </a>
+      </h1>
+    </div>
+    <!-- 内容 -->
+    <div data-role="main" class="ui-content">
+      <div class="ui-grid-solo">
+        <div class="ui-block-a">
+          <div class="ui-grid-b">
+            <div class="ui-block-a">
+              <a class="openApp" data-scheme="com.hengyi.fastvideoplayer" data-title="FastVideoPlayer"> 
+                <img src="img/直播.png" alt="">
+                <p>直播</p>
+              </a>
+            </div>
+            <div class="ui-block-b">
+              <a class="openApp" data-scheme="org.edx.mobile" data-title="eXeJ"> 
+                <img src="img/作业.png" alt="">
+                <p>作业</p>
+              </a>
+            </div>
+            <div class="ui-block-c">
+              <a href="src/拍照.html" data-ajax="false">
+                <img src="img/拍照上传.png" alt="">
+                <p>拍照上传</p>
+              </a>
+            </div>
+          </div>
+          <div class="ui-grid-b">
+            <div class="ui-block-a">
+              <a href="src/资源.html" data-ajax="false">
+                <img src="img/资源展示.png" alt="">
+                <p>资源展示</p>
+              </a>
+            </div>
+            <div class="ui-block-b">
+              <a href="#" data-ajax="false">
+                <img src="img/课外资源.png" alt="">
+                <p>课外资源</p>
+              </a>
+            </div>
+            <div class="ui-block-c">
+              <a href="src/课堂交互.html" data-ajax="false">
+                <img src="img/课堂交互.png" alt="">
+                <p>课堂交互</p>
+              </a>
+            </div>
+          </div>
+          <div class="ui-grid-b">
+            <div class="ui-block-a">
+              <a href="#" data-ajax="false">
+                <img src="img/互动.png" alt="">
+                <p>互动(wiki)</p>
+              </a>
+            </div>
+            <div class="ui-block-b">
+              <a href="#" data-ajax="false">
+                <img src="img/白板.png" alt="">
+                <p>白板</p>
+              </a>
+            </div>
+            <div class="ui-block-c">
+              <a>
+                <img src="img/云盘.png" alt="">
+                <p>云盘</p>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script>  
+    test.openApp.init();
+  </script>
+    <script src="layer/layer.js"></script>
+    <!-- <script src="js/common.js"></script> -->
+    <script>
+
+    // var ws = new WebSocket("ws://192.168.1.126:8081/ws/app/");
+    var ws = new WebSocket('ws://192.168.1.10:8181'); 
+    ws.onopen = function(){
+        // ws.send('已打开');
+    };
+    ws.onmessage = function(evt){
+      console.log(evt)
+        // var data = JSON.parse(JSON.parse(evt.data)['message']).problemurl;
+        // console.log(data)
+        // if(data != '1'){
+            // console.log(evt)
+            // var data = JSON.parse(JSON.parse(evt.data)['message']);
+            // console.log(data)
+            var index = top.layer.open({
+            type: 2,
+            area: ['90%', '86%'],
+            title: '答题页',
+            fixed: false, //不固定
+            maxmin: true,
+            content: evt.data,
+            cancel:function(){
+              if(!confirm('您确定要关闭此页面吗')){
+                  return false;
+              }
+            }
+        });
+        // }
+        // if(data == '1'){
+        //     console.log('1111')
+        //     layer.close(layer.index)
+        // }    
+    };
+    </script>
+</body>
+</html>

@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="initial-scale=1,maximum-scale=1, minimum-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="../css/jquery.mobile-1.4.5.css">
+    <link rel="stylesheet" href="../css/login.css">
+    <script src="../js/jquery.min.js"></script>
+    <script src="../js/jquery.mobile-1.4.5.js"></script>
+    <script src="../js/less.min.js"></script>
+    <script src="../js/index.js"></script>
+    <script>
+        var docEl = document.documentElement,
+        resizeEvt = 'orientationchange' in window ? 'orientationchange' : 'resize';
+        var clientWidth = docEl.clientWidth;
+        docEl.style.fontSize = 10 * (clientWidth / 760) + 'px';
+        window.addEventListener(resizeEvt, function() { clientWidth = docEl.clientWidth;docEl.style.fontSize = 10 * (clientWidth / 760) + 'px'; }, false);
+
+        // document.documentElement.style.fontSize = document.documentElement.clientWidth / 760*100 + 'px';
+    </script>
+</head>
+<body>
+	<div data-role="page" class="page">
+		<div data-role="header" class="header">
+			<h1>
+				<img src="../img/logo.png" alt="">
+			</h1>
+		</div>
+		<div data-role="main" class="ui-content">
+			<form>
+				<input type="text" name="username" id="uname" placeholder="请输入账号">
+				<input type="password" name="password" id="upwd" placeholder="请输入密码">
+				<p id="errmsg" style="color:#ff0000"></p>
+				<p class="forget"><a href="pwd.html">忘记密码？</a></p>
+				<!-- <input type="button" value="登录" class="submit"> -->
+				<button class="submit" type="button">登录</button>
+				<p class="regist">还没有账号？现在<a href="regist.html">注册</a></p>
+			</form>
+		</div>
+		<div data-role="footer" class="footer">
+			<div class="ui-grid-b">
+				<div class="ui-block-a">
+					<a href="#">
+						<img src="../img/微信.png" alt="">
+						<p>微信登录</p>
+					</a>
+				</div>
+				<div class="ui-block-b">
+					<a href="#">
+						<img src="../img/QQ.png" alt="">
+						<p>QQ登录</p>
+					</a>
+				</div>
+				<div class="ui-block-c">
+					<a href="phone.html">
+						<img src="../img/手机.png" alt="">
+						<p>手机号登录</p>
+					</a>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<script>
+		$('.submit').click(function(){
+			$.post('https://www.easy-mock.com/mock/5c85ba3786fddd1d77f82838/login/login',{
+				"name":$('#uname').val(),
+				"pwd":$('#upwd').val()
+			},
+			function(data){
+				if($('#uname').val().trim() !== data.data.username || $('#upwd').val().trim() !== data.data.password){
+					$('#errmsg').text('用户名或者密码错误');
+				}else{
+					$('#errmsg').text('');
+					window.location.href = '../index.html';
+				}
+			})
+		})
+	</script>
+</body>
+</html>

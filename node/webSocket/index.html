@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="layer.js"></script>
+</head>
+<body>
+    <h1>websocket</h1>
+    <!-- <a id="hh">hahah </a> -->
+    <script>
+        var ws = new WebSocket('ws://127.0.0.1:8181/');
+        ws.onopen = function(){
+            // alert('opened');
+            ws.send('我是client');
+        };
+        ws.onmessage = function(evt){
+         var hh = document.getElementById('hh');
+            // hh.innerHTML = evt.data
+            // hh.href = evt.data;
+            layer.open({
+               content: '<a href="'+evt.data+'">哈哈</a>',
+               btn: '关闭',
+               shadeClose: false,
+               yes: function(){
+                  layer.open({
+                     content: '好的'
+                     ,time: 2
+                     ,skin: 'msg'
+                  });
+               }
+               });
+        };
+        ws.onclose = function(){
+            
+        };
+        ws.onerror = function(err){
+            
+        }
+    </script>
+</body>
+</html>

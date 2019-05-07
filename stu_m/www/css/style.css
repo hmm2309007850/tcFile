@@ -1,0 +1,118 @@
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+input,
+ul {
+  margin: 0 !important;
+  padding: 0 !important;
+}
+a {
+  display: inline-block !important;
+  text-decoration: none;
+  font-weight: normal !important;
+  color: #000 !important;
+}
+* {
+  box-sizing: border-box;
+}
+#page {
+  background-color: #fff;
+}
+.header {
+  height: 36rem;
+  background-color: #fff !important;
+  border: none;
+  overflow: hidden;
+  background: url('../img/背景图.png') no-repeat;
+  background-size: 100%;
+  padding-top: 7rem;
+}
+.header h1 {
+  height: 7rem;
+  position: relative;
+  font-size: 4rem !important;
+  color: #fff;
+}
+.header h1 > img {
+  position: absolute;
+  left: 5.2rem;
+  top: 1.4rem;
+  /* width: 15rem;
+  height: 3.8rem; */
+  width: 22%;
+  vertical-align: middle;
+}
+.header h1 a {
+  position: absolute;
+  right: 5rem;
+  top: 0;
+  width: 6.8rem;
+  height: 6.8rem;
+  /* width: 9%; */
+  vertical-align: middle;
+}
+.header h1 a img {
+  width: 100% !important;
+}
+.ui-content {
+  position: relative;
+  text-align: center;
+  padding: 3rem 5rem;
+  margin-top: -21rem;
+}
+.ui-content .ui-grid-solo {
+  background-color: #fff;
+  padding-top: 6.5rem;
+  padding-bottom: 2rem;
+  border-radius: 1rem;
+  box-shadow: 0 0.8rem 4rem #daebff;
+}
+.ui-content .ui-grid-solo .ui-grid-b {
+  margin-bottom: 6rem;
+}
+.ui-content .ui-grid-solo .ui-grid-b a {
+  /* width: 15rem;
+  height: 15rem; */
+  width: 60%;
+  font-size: 2.4rem;
+  color: #333;
+  font-family: 'MicrosoftYaHei';
+}
+.ui-content .ui-grid-solo .ui-grid-b a img {
+  width: 100%;
+  /* width: 15rem;
+  height: 15rem; */
+}
+.ui-content .ui-grid-solo .ui-grid-b a p {
+  margin-top: 1.6rem !important;
+}
+/* 
+@media screen and ( max-width: 520px){
+  .header {
+    height: 34rem;
+    padding-top: 6rem;
+  }
+  .ui-content {
+    padding: 2rem 3rem;
+  }
+  .ui-content .ui-grid-solo {
+    padding-top: 6rem;
+  }
+  .ui-content .ui-grid-solo .ui-grid-b {
+    margin-bottom: 5rem;
+  }
+  .ui-content .ui-grid-solo .ui-grid-b a {
+    width: 70%;
+  }
+  .header h1 img:first-child {
+    width: 25%;
+  }
+  .header h1 img:last-child {
+    width: 12%;
+  }
+} */

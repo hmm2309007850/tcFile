@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="initial-scale=1.0, maximum-scale=1, minimum-scale=1">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <link rel="stylesheet" href="css/jquery.mobile-1.4.5.css">
+  <link rel="stylesheet" href="css/style.css">
+  <script src="js/jquery.min.js"></script>
+  <script src="js/jquery.mobile-1.4.5.js"></script>
+  <script src="js/jquerysession.js"></script>
+  <script>
+    if($.session.get('username') == null || $.session.get('password') == null){
+      alert('请先登录!');
+      location.href = 'login/login.html';
+    }
+    var docEl = document.documentElement,
+    resizeEvt = 'orientationchange' in window ? 'orientationchange' : 'resize';
+    var clientWidth = docEl.clientWidth;
+    docEl.style.fontSize = 10 * (clientWidth / 375) + 'px';
+    window.addEventListener(resizeEvt, function() { clientWidth = docEl.clientWidth;docEl.style.fontSize = 10 * (clientWidth / 375) + 'px'; }, false);
+  </script>
+</head>
+<body>
+  <div data-role="page" id="page">
+    <!-- 头部 -->
+    <div data-role="header" class="header">
+      <h1>
+        <img src="img/logo.png" alt="">
+        <a href="javascript:;">
+          <img src="img/头像.png" alt="">
+        </a>
+      </h1>
+    </div>
+    <!-- 内容 -->
+    <div data-role="main" class="ui-content">
+      <div class="ui-grid-solo">
+        <div class="ui-block-a">
+          <div class="ui-grid-b">
+            <div class="ui-block-a">
+              <a class="openApp" data-scheme="com.hengyi.fastvideoplayer" data-title="FastVideoPlayer"> 
+                <img src="img/直播.png" alt="">
+                <p>直播</p>
+              </a>
+            </div>
+            <div class="ui-block-b">
+              <a class="openApp" data-scheme="org.edx.mobile" data-title="eXeJ"> 
+                <img src="img/作业.png" alt="">
+                <p>作业</p>
+              </a>
+            </div>
+            <div class="ui-block-c">
+              <a href="src/拍照.html" data-ajax="false">
+                <img src="img/拍照上传.png" alt="">
+                <p>拍照上传</p>
+              </a>
+            </div>
+          </div>
+          <div class="ui-grid-b">
+            <div class="ui-block-a">
+              <a href="src/资源课本/book.html" data-ajax="false">
+                <img src="img/资源展示.png" alt="">
+                <p>资源展示</p>
+              </a>
+            </div>
+            <div class="ui-block-b">
+              <a href="#" data-ajax="false">
+                <img src="img/课外资源.png" alt="">
+                <p>课外资源</p>
+              </a>
+            </div>
+            <div class="ui-block-c">
+              <a href="src/课堂交互.html" data-ajax="false">
+                <img src="img/课堂交互.png" alt="">
+                <p>课堂交互</p>
+              </a>
+            </div>
+          </div>
+          <div class="ui-grid-b">
+            <div class="ui-block-a">
+              <a href="#" data-ajax="false">
+                <img src="img/互动.png" alt="">
+                <p>互动(wiki)</p>
+              </a>
+            </div>
+            <div class="ui-block-b">
+              <a href="#" data-ajax="false">
+                <img src="img/白板.png" alt="">
+                <p>白板</p>
+              </a>
+            </div>
+            <div class="ui-block-c">
+              <a>
+                <img src="img/云盘.png" alt="">
+                <p>云盘</p>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script src="js/index.js"></script>
+  <script src="cordova.js"></script>
+  <script>  
+    test.openApp.init();
+
+    var name = sessionStorage.getItem('username');
+    var pwd = sessionStorage.getItem('password');
+    var stuUser = [];
+    stuUser[0] = name;
+    stuUser[1] = pwd;
+    console.log(stuUser)
+    $('h1 a').click(function(){
+      location.href = 'src/个人中心.html';
+    })
+  </script>
+</body>
+</html>

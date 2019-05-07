@@ -1,0 +1,160 @@
+body {
+height: 100%;
+background-color: #fff;
+}
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+input,
+ul {
+margin: 0 !important;
+padding: 0 !important;
+}
+a {
+display: inline-block !important;
+text-decoration: none;
+font-weight: normal !important;
+color: #000 !important;
+}
+li {
+    list-style: none;
+}
+* {
+box-sizing: border-box;
+}
+#page {
+position: relative;
+background-color: #fff;
+height: 100%;
+}
+#page #header {
+background-color: #fff;
+border: none;
+padding: 0.6rem !important;
+}
+#page #header h1 {
+    font-size: 1rem;
+}
+#page #header a {
+position: absolute;
+left: 0;
+padding: 0;
+font-family: 'MicrosoftYaHei';
+color: #333;
+}
+.ui-content {
+padding: 1rem 1rem;
+background-color: #fff;
+}
+.ui-grid-b {
+/* margin-bottom: 1rem; */
+}
+.ui-grid-b div a {
+position: relative;
+background-color: #fff;
+text-align: center;
+width: 100%;
+color: #333;
+font-size: 1rem;
+}
+.ui-grid-b div a img {
+width: 90%;
+}
+.ui-grid-b div a p {
+margin: 0.4rem 0 !important;
+}
+.ui-content a .download {
+position: absolute;
+right: 0.8rem;
+bottom: 2.5rem;
+width: 16%;
+}
+article {
+    position: relative;
+    height: 2rem;
+    font-size: 0.8rem;
+    padding: 0rem 0.6rem;
+    margin-top: 1rem;
+    border-bottom: 1px solid #d8dbd7;
+}
+article a:first-child {
+    position: absolute;
+    left: 1rem;
+}
+article a:first-child span {
+    display: inline-block;
+    padding: 0.2rem 0.4rem;
+    background-color: #D6E8FF;
+    color: #4799ED;
+    border-radius: 2.5rem;
+}
+article a:last-child {
+    position: absolute;
+    right: 1rem;
+    top: 0.4rem;
+}
+
+.search {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 70%;
+    height: 100%;
+    background-color: #fff;
+    z-index: 999;
+    padding-top: 0.6rem;
+    display: none;
+}
+
+.search h3 {
+    font-size: 18px;
+    font-weight: bold;
+    padding: 10px; 
+    margin-left: 0.6rem !important;
+}
+.search .close_search {
+    padding: 15px 15px 5px 15px; 
+}
+.search hr {
+    background: #eee; 
+}
+.search .sc {
+    margin-top: 20px; 
+}
+.search .sc label {
+    display: inline-block;
+    color: #999;
+    font-size: 14px;
+    padding: 10px; 
+}
+.search .sc span {
+    padding: 8px 10px;
+    display: inline-block;
+    border-radius: 15px;
+    font-weight: 400;
+    font-size: 12px;
+    background: #eee;
+    color: #000;
+    margin: 5px 10px; 
+}
+.search .sc .active {
+    background: #D6E8FF;
+    color: #4799ED; 
+}
+
+.bg{
+    display:none;
+    position:fixed;
+    width:100%;
+    height:100%;
+    background:#000;
+    z-index:100;
+    top:0;
+    left:0;
+    opacity:0.3;
+}

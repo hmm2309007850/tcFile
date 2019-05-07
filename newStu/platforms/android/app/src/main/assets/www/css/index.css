@@ -1,0 +1,112 @@
+html {
+  font-size: 120px;
+}
+body {
+  font-size: 2.2rem;
+}
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+input,
+ul {
+  margin: 0 !important;
+  padding: 0 !important;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: 300 !important;
+}
+a {
+  display: inline-block !important;
+  text-decoration: none;
+  font-weight: normal !important;
+}
+input {
+  display: inline-block !important;
+}
+* {
+  box-sizing: border-box;
+}
+#page {
+  background-color: #fff;
+}
+.header {
+  position: relative;
+  height: 40rem;
+  background-color: #fff !important;
+  border: none;
+  overflow: hidden;
+  background: url('../img/背景图.png') no-repeat;
+  background-size: 100%;
+  padding-top: 6rem;
+}
+.header h1 {
+  font-size: 3.6rem !important;
+  color: #fff;
+}
+.header img {
+  width: 8%;
+  position: absolute;
+  top: 5.3rem;
+  left: 5rem;
+}
+.ui-content {
+  position: relative;
+  padding: 0 5rem;
+  margin-top: -23.2rem;
+}
+.ui-content .ui-grid-solo {
+  margin-bottom: 2rem;
+  border-radius: 2.4rem;
+  box-shadow: 0rem 1rem 2.2rem #e1e1e1;
+}
+.ui-content .ui-grid-solo .ui-block-a {
+  height: 28rem;
+}
+.ui-content .ui-grid-solo .ui-block-a a {
+  width: 100%;
+  height: 100%;
+  background-color: #fff;
+}
+.ui-content .ui-grid-solo .ui-block-a .ui-grid-a {
+  height: 100%;
+}
+.ui-content .ui-grid-solo .ui-block-a .ui-grid-a .ui-block-a {
+  height: 100%;
+  font-size: 4rem;
+  text-align: center;
+  line-height: 30rem;
+}
+.ui-content .ui-grid-solo .ui-block-a .ui-grid-a .ui-block-b {
+  position: relative;
+  text-align: center;
+  height: 100%;
+}
+.ui-content .ui-grid-solo .ui-block-a .ui-grid-a .ui-block-b img {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 80%;
+}
+.blue {
+  font-weight: 500;
+  color: #5f909c;
+}
+.red {
+  font-weight: 500;
+  color: #bd93a3;
+}
+.yellow {
+  font-weight: 500;
+  color: #aa9080;
+}

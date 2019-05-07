@@ -1,0 +1,97 @@
+html {
+    font-size: 120px;
+  }
+  body {
+    font-size: 2.2rem;
+  }
+  body,
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6,
+  p,
+  input,
+  ul {
+    margin: 0 !important;
+    padding: 0 !important;
+  }
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-weight: normal;
+  }
+  a {
+    display: inline-block !important;
+    text-decoration: none;
+    font-weight: normal !important;
+  }
+  input {
+    display: inline-block !important;
+  }
+  * {
+    box-sizing: border-box;
+  }
+  .page {
+    background-color: #fff;
+  }
+  .header {
+    border: none;
+    background-color: #fff !important;
+  }
+  .header h1 {
+    position: relative;
+    height: 40rem;
+    background: url('../img/login/bg.png') no-repeat;
+    background-size: 100%;
+  }
+  .header h1 img {
+    width: 20%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+  .ui-content {
+    padding: 0 10.5rem;
+  }
+  .ui-content form .ui-input-text {
+    outline: none;
+    border: none;
+    box-shadow: none;
+    /* border-bottom: 0.1rem solid #999;
+    padding-bottom: 1.2rem;
+    margin-bottom: 4.2rem; */
+  }
+  .ui-grid-solo, .ui-grid-a {
+   border-bottom: 0.1rem solid #999;
+  }
+  .ui-content form input {
+    font-size: 2.8rem;
+    color: #999;
+    text-indent: 1em;
+  }
+  .ui-grid-a .ui-block-b input {
+    text-align: center;
+    color: #111 !important;
+    font-size: 2.4rem;
+}
+  .ui-content form #regist {
+    height: 8rem;
+    background-color: #4299ff;
+    font-size: 2.8rem;
+    color: #fff;
+    font-weight: 200;
+    border-radius: 4rem;
+    margin-top: 14rem;
+    margin-bottom: 2.4rem;
+  }
+  .ui-content form .info {
+    text-align: center;
+    color: #999;
+  }
+  

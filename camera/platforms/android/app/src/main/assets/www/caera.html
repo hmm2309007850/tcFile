@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Capture Photo</title>
+        <meta http-equiv="Content-type" content="text/html; charset=utf-8">
+        <script type="text/javascript" charset="utf-8" src="cordova.js"></script>
+        <script type="text/javascript" charset="utf-8">
+            var pictureSource;
+            var destinationType;
+ 
+            document.addEventListener("deviceready",onDeviceReady,false);
+ 
+            //Cordova加载完成会触发
+            function onDeviceReady() {
+                pictureSource=navigator.camera.PictureSourceType;
+                destinationType=navigator.camera.DestinationType;
+            }
+ 
+            //获取照片
+            function getPhoto(source) {
+                //quality : 图像的质量，范围是[0,100]
+                navigator.camera.getPicture(onPhotoURISuccess,
+                  function(error){console.log("照片获取失败！")},
+                  { quality: 50, destinationType: destinationType.FILE_URI, sourceType: source });
+            }
+ 
+            //获取照片成功
+            function onPhotoURISuccess(imageURI) {
+                //打印出照片路径
+                console.log(imageURI);
+                //显示照片
+                var largeImage = document.getElementById('largeImage');
+                largeImage.style.display = 'block';
+                largeImage.src = imageURI;
+ 
+                upload(imageURI);
+            }
+ 
+          //上传文件
+          function upload(fileURL) {
+ 
+            //上传成功
+            var success = function (r) {
+                console.log("上传成功! Code = " + r.responseCode);
+            }
+ 
+            //上传失败
+            var fail = function (error) {
+                alert("上传失败! Code = " + error.code);
+            }
+ 
+            var options = new FileUploadOptions();
+            options.fileKey = "file1";
+            options.fileName = fileURL.substr(fileURL.lastIndexOf('/') + 1);
+            //options.mimeType = "text/plain";
+ 
+            //上传参数
+            var params = {};
+            params.value1 = "test";
+            params.value2 = "param";
+            options.params = params;
+ 
+            var ft = new FileTransfer();
+            //上传地址
+            var SERVER = "http://www.hangge.com/upload.php"
+            ft.upload(fileURL, encodeURI(SERVER), success, fail, options);
+          };
+ 
+        </script>
+    </head>
+    <body style="padding-top:50px">
+        <button style="font-size:23px;" onclick="getPhoto(pictureSource.PHOTOLIBRARY);">
+            从相册选择照片并上传
+        </button> <br>
+        <img style="display:none;" id="largeImage" src="" width="300px" />
+    </body>
+</html>

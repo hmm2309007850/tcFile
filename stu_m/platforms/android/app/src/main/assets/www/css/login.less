@@ -1,0 +1,144 @@
+//base开始
+html {
+    font-size: 120px;
+}
+body {
+    font-size: 2.2rem;
+}
+body,h1,h2,h3,h4,h5,h6,p,input,ul {
+    margin: 0 !important;
+    padding: 0 !important;
+}
+h1,h2,h3,h4,h5,h6 {
+    font-weight: normal;
+}
+a {
+    display: inline-block !important;
+    text-decoration: none;
+    font-weight: normal !important;
+}
+input {
+    display: inline-block !important;
+}
+* {
+    box-sizing: border-box;
+}
+// base结束
+// page 页面部分开始
+.page {
+    background-color: #fff;
+}
+// page 页面部分结束
+// 头部开始
+.header {
+    border: none;
+    background-color: #fff !important;
+    h1 {
+        position: relative;
+        height: 40rem;
+        background: url('../img/login/bg.png') no-repeat;
+        background-size: 100%;
+        img {
+            width: 20%;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%,-50%);
+        }
+    }
+}
+// 头部结束
+// 主体内容开始
+.ui-content {
+    padding: 0 10.5rem;
+    form {
+        .ui-input-text {
+            outline: none;
+            border: none;
+            box-shadow: none;
+            border-bottom: 0.1rem solid #999;
+            padding-bottom: 1.2rem;
+            margin-bottom: 4.2rem;
+        }
+        // .ui-input-text:last-child {
+        //     margin-bottom: 0 !important;
+        // }
+        input {
+            font-size: 2.8rem;
+            color: #999;
+            text-indent: 1em;
+        }
+        .forget {
+            font-size: 2.4rem;
+            a {
+                display: inline-block;
+                color: #000;
+                margin-left: 3rem;
+                // margin-top: 2rem;
+            }
+        }
+        .submit {
+            height: 8rem;
+            background-color: #4299ff;
+            font-size: 2.8rem;
+            color: #fff;
+            font-weight: 200;
+            border-radius: 4rem;
+            margin-top: 9rem;
+            margin-bottom: 2.4rem;
+        }
+        .regist {
+            font-size: 2.4rem;
+            text-align: center;
+            a {
+                color: #4299ff;
+            }
+        }
+    }
+}
+// 主体内容结束
+// 底部开始
+.footer {
+    border: none;
+    text-align: center;
+    font-size: 2rem;
+    padding: 0 10rem;
+    margin-top: 7rem;
+    background-color: #fff !important;
+    a {
+        color: #999;
+        img {
+            width: 50%;
+        }
+    }
+}
+// 底部结束
+// 注册开始
+.ui-content {
+    #fm {
+        .ruler {
+            color: #999;
+            margin-left: 2.2rem !important;
+        }
+        #regist {
+            height: 8rem;
+            background-color: #4299ff;
+            font-size: 2.8rem;
+            color: #fff;
+            font-weight: 200;
+            border-radius: 4rem;
+            margin-top: 14rem;
+            margin-bottom: 2.4rem;
+        }
+        .info {
+            text-align: center;
+            color: #999;
+        }
+        .ui-input-text:nth-child(2) {
+            margin-bottom: 4.2rem !important;
+        }
+        
+    }
+
+}
+// 注册结束

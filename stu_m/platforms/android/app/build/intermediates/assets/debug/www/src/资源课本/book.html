@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/resert.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/iconfont.css">
+    <script src="../../js/jquery.min.js"></script>
+    <script src="../../js/jquerysession.js"></script>
+    
+    <script type="text/javascript">
+        // if($.session.get('username') == null || $.session.get('password') == null){
+        //     alert('请先登录!');
+        //     location.href = '../../login/login.html';
+        // }
+        !function(e,t){function n(){var n=l.getBoundingClientRect().width;t=t||540,n>t&&(n=t);var i=100*n/e;r.innerHTML="html{font-size:"+i+"px;}"}var i,d=document,o=window,l=d.documentElement,r=document.createElement("style");if(l.firstElementChild)l.firstElementChild.appendChild(r);else{var a=d.createElement("div");a.appendChild(r),d.write(a.innerHTML),a=null}n(),o.addEventListener("resize",function(){clearTimeout(i),i=setTimeout(n,300)},!1),o.addEventListener("pageshow",function(e){e.persisted&&(clearTimeout(i),i=setTimeout(n,300))},!1),"complete"===d.readyState?d.body.style.fontSize="16px":d.addEventListener("DOMContentLoaded",function(e){d.body.style.fontSize="16px"},!1)}(750,750);
+    </script>
+</head>
+<body>
+<div class="container">
+    <header>
+        <h3>我的课本</h3>
+        <div class="left_back"><a href="javascript:history.go(-1)"><i  class="iconfont icon-zuo1"></i></a></div>
+    </header>
+    <main>
+        <div class="none">
+            <img src="images/none.png" alt="">
+            <p>您还没有添加资源哦</p>
+            <a href="addbook.html"><button>去添加</button></a>
+        </div>
+    </main>
+</div>
+<script>
+    // var name = sessionStorage.getItem('username');
+    // var pwd = sessionStorage.getItem('password');
+    // var stuUser = [];
+    // stuUser[0] = name;
+    // stuUser[1] = pwd;
+    // console.log(stuUser)
+</script>
+</body>
+</html>

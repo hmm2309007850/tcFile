@@ -1,0 +1,31 @@
+{
+  "prepare_queue": {
+    "installed": [],
+    "uninstalled": []
+  },
+  "config_munge": {
+    "files": {}
+  },
+  "installed_plugins": {
+    "cordova-plugin-whitelist": {
+      "PACKAGE_NAME": "com.stu.stu"
+    },
+    "cordova-plugin-camera": {
+      "PACKAGE_NAME": "com.stu.stu"
+    },
+    "cordova-plugin-file-transfer": {
+      "PACKAGE_NAME": "com.stu.stu"
+    },
+    "com.lampa.startapp": {
+      "PACKAGE_NAME": "com.stu.stu"
+    },
+    "cordova-plugin-appavailability": {
+      "PACKAGE_NAME": "com.stu.stu"
+    }
+  },
+  "dependent_plugins": {
+    "cordova-plugin-file": {
+      "PACKAGE_NAME": "com.stu.stu"
+    }
+  }
+}

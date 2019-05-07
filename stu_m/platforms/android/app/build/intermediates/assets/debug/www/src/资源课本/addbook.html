@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/resert.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/iconfont.css">
+    <script src="../../js/jquery.min.js"></script>
+    <script type="text/javascript">
+        !function(e,t){function n(){var n=l.getBoundingClientRect().width;t=t||540,n>t&&(n=t);var i=100*n/e;r.innerHTML="html{font-size:"+i+"px;}"}var i,d=document,o=window,l=d.documentElement,r=document.createElement("style");if(l.firstElementChild)l.firstElementChild.appendChild(r);else{var a=d.createElement("div");a.appendChild(r),d.write(a.innerHTML),a=null}n(),o.addEventListener("resize",function(){clearTimeout(i),i=setTimeout(n,300)},!1),o.addEventListener("pageshow",function(e){e.persisted&&(clearTimeout(i),i=setTimeout(n,300))},!1),"complete"===d.readyState?d.body.style.fontSize="16px":d.addEventListener("DOMContentLoaded",function(e){d.body.style.fontSize="16px"},!1)}(750,750);
+    </script>
+    <style>
+        .bg{
+            display:none;
+            position:fixed;
+            width:100%;
+            height:100%;
+            background:#000;
+            z-index:100;
+            top:0;
+            left:0;
+            opacity:0.3;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <header>
+        <h3>课本展示</h3>
+        <div class="left_back"><a href="javascript:history.go(-1)"><i class="iconfont icon-zuo1"></i></a></div>
+    </header>
+    <main>
+        <article>
+            <a>
+                <span class="press"></span>
+                <span class="section"></span>
+                <span class="subject"></span>
+            </a>
+            <span id="seach_button">重新选择</span>
+        </article>
+        <div class="book_content">
+        <ul id="book_download">
+            <li><a href="#"><div class="allbook"><img src="images/book.png"><img src="images/download.png" alt="" class="download"></div><p>七年级语文上册</p></a></li>
+            <li><a href="javascript:;"><div class="allbook"><img src="images/book.png"><img src="images/download.png" alt="" class="download"></div><p>七年级语文上册</p></a></li>
+            <li><a href="javascript:;"><div class="allbook"><img src="images/book.png"><img src="images/download.png" alt="" class="download"></div><p>七年级语文上册</p></a></li>
+            <li><a href="javascript:;"><div class="allbook"><img src="images/book.png"><img src="images/download.png" alt="" class="download"></div><p>七年级语文上册</p></a></li>
+            <li><a href="javascript:;"><div class="allbook"><img src="images/book.png"><img src="images/download.png" alt="" class="download"></div><p>七年级语文上册</p></a></li>
+            <li><a href="javascript:;"><div class="allbook"><img src="images/book.png"><img src="images/download.png" alt="" class="download"></div><p>七年级语文上册</p></a></li>
+            <li><a href="javascript:;"><div class="allbook"><img src="images/book.png"><img src="images/download.png" alt="" class="download"></div><p>七年级语文上册</p></a></li>
+            <li><a href="javascript:;"><div class="allbook"><img src="images/book.png"><img src="images/download.png" alt="" class="download"></div><p>七年级语文上册</p></a></li>
+            <li><a href="javascript:;"><div class="allbook"><img src="images/book.png"><img src="images/download.png" alt="" class="download"></div><p>七年级语文上册</p></a></li>
+        </ul>
+        </div>
+    </main>
+    <div class="bg"></div>
+    <div class="search">
+        <div class="close_search" id="close_search"><a href="javascript:;"><i  class="iconfont icon-guanbi"></i></a></div>
+        <hr>
+        <h3>添加筛选</h3>
+        <div class="sc">
+            <label for="">出版社筛选</label></br>
+            <span class="active">不限</span><span>中国人民出版社</span><span>中国人民出版社</span><span>中国人民出版社</span><span>中国人民出版社</span><span>中国人民出版社</span><span>中国人民出版社</span><span>中国人民出版社</span><span>中国人民出版社</span>
+        </div>
+        <div class="sc">
+            <label for="">学段筛选</label></br>
+            <span class="active">不限</span><span>一年级</span><span>一年级</span><span>一年级</span><span>一年级</span><span>一年级</span><span>一年级</span><span>一年级</span><span>一年级</span><span>一年级</span><span>一年级</span>
+        </div>
+        <div class="sc">
+            <label for="">科目筛选</label></br>
+            <span class="active">不限</span><span>数学</span><span>语文</span><span>英语</span><span>物理</span><span>化学</span><span>生物</span><span>地理</span><span>历史</span><span>政治</span>
+        </div>
+        <div class="deter">
+            <span class="reset">重置</span><span class="submit">确定</span>
+        </div>
+    </div>
+</div>
+<script src="js/addbook.js"></script>
+</body>
+</html>

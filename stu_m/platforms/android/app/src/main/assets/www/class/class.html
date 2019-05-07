@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1, minimum-scale=1">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <link rel="stylesheet" href="css/jquery.mobile-1.4.5.css">
+  <link rel="stylesheet" href="css/answer.css">
+  <script src="js/jquery.min.js"></script>
+  <script src="js/jquery.mobile-1.4.5.js"></script>
+  <script src="js/template.js"></script>
+</head>
+<body>
+  <script>
+    var docEl = document.documentElement,
+    resizeEvt = 'orientationchange' in window ? 'orientationchange' : 'resize';
+    var clientWidth = docEl.clientWidth;
+    docEl.style.fontSize = 10 * (clientWidth / 760) + 'px';
+    window.addEventListener(resizeEvt, function() { clientWidth = docEl.clientWidth;docEl.style.fontSize = 10 * (clientWidth / 760) + 'px'; }, false); 
+  </script>
+
+  <div data-role="page" id="page">
+    <!-- 头部 -->
+    <div data-role="header" id="header">
+      <h1>答题</h1>
+    </div>
+    <!-- 内容 -->
+    <div data-role="main" class="ui-content" id="answerBox">
+        
+    </div>
+    <div class="submit">
+      <button>提交</button>
+    </div>
+  </div>
+
+  <script>
+   $('form').on('tap','input',function(){
+    var hh = $(this).val();
+    console.log(hh)
+   })
+  </script>
+  <script type="text/template" id="answerTpl">
+    
+    <div class="problem">
+      <h5>{{data.type}}</h5>
+      <div class="ui-grid-solo">
+        <div class="ui-block-a">
+          <img src="{{data.img}}" alt="">
+        </div>
+      </div>
+    </div>
+    <div class="answer">
+        <h5>答题卡</h5>
+        <!-- 选择题 -->
+        <ul class="choice" id="choiceBox">
+            {{each data.answer as value}}
+              <li>{{value}}</li>
+            {{/each}}
+        </ul>
+        <ul class="mchoice">
+            {{each data.answer as value}}
+              <li>{{value}}</li>
+            {{/each}}
+        </ul>
+        <!-- 填空题 -->
+        <div class="completion">
+            <!-- <p class="comcorrect">
+          {{each data.option as value}}
+              <input type="text" name="text"><br><br>
+          {{/each}}
+          </p> -->
+          <form>
+            <!-- {{each data.option as value}} -->
+                <input type="text" name="text"><br><br>
+            <!-- {{/each}} -->
+          </form>
+        </div>
+        <!-- 简答题 -->
+        <div class="short">
+          <textarea cols="30" rows="5"></textarea><br><br>
+          <p>
+            <input type="button" value="拍照">
+          </p>
+        </div>
+        <!-- 判断题 -->
+        <form class="judge">
+          <input type="radio" name="hh" value="正确" checked>&nbsp;&nbsp;正确&nbsp;&nbsp;&nbsp;&nbsp;
+          <input type="radio" name="hh" value="错误">&nbsp;&nbsp;错误
+        </form>
+    </div>
+    <div class="analysis">
+        <div class="answers">
+            <img src="img/answer/答案.png" alt="">
+            <span>正确答案:</span>&nbsp;
+            <span class="req">{{data.correct}}</span>
+        </div>
+    </div>
+    
+  </script>
+
+  <script>
+    $.ajax({
+      url: 'https://www.easy-mock.com/mock/5c91b85390e2d82f8fe1a221/answer/problem',
+      contentType: 'application/json',
+      type: 'get',
+      dataType: 'json',
+      success: function(data){
+        // console.log(data);
+        var html = template('answerTpl',data);
+        $('#answerBox').html(html);
+        var node = '';
+        if(data.data.type == '单选题'){
+          $('.choice').show();
+          $('.answer .choice').on('tap','li',function(){
+          $(this).addClass('selection').siblings().removeClass('selection');
+          if($(this).hasClass('selection')){
+            node = $(this);
+            console.log(this)
+          }
+        });
+        }else if(data.data.type == '判断题'){
+          $('.judge').show();
+        }else if(data.data.type == '填空题1'){
+          $('.completion').show();
+          // $('.comcorrect input').on('blur',function(){
+          //     // node = $('.comcorrect input[type=text]').val();
+          //     // console.log(node)
+          // })
+          
+        }else if(data.data.type == '填空题'){
+          $('.short').show();
+        }else if(data.data.type == '多选题'){
+          $('.mchoice').show();
+          $('.answer .mchoice').on('tap','li',function(){
+          $(this).toggleClass('selection');
+        });
+        }
+
+        $('button').on('tap',function(){
+          $('.analysis').show();
+          $('button').hide();
+            
+            if(data.data.type == '填空题1'){
+              node = {};
+              var inputs = $('form').serializeArray();
+              var n=0;
+              $.each(inputs, function () {
+                  node[n+1] = this.value;
+                  n++;
+              });
+              // console.log(JSON.stringify(d))
+              
+            }
+            if(data.data.type == '多选题'){
+            var option= [];
+            node = {option:option}
+            var lis = $('.mchoice li');
+              for(var i = 0;i < lis.length;i++){
+                  if(lis.eq(i).hasClass('selection')){
+                      option.push(lis.eq(i).html())
+                  }
+              } 
+              console.log(node)
+            }
+            // if(data.data.type == '填空题'){
+            //   node = $('.judge input[name="hh"]:checked').val();        
+            // }
+            // console.log(node)
+        });  
+      }
+    });
+  </script>
+</body>
+</html>

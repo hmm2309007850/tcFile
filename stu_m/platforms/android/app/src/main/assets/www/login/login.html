@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="initial-scale=1,maximum-scale=1, minimum-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="../css/jquery.mobile-1.4.5.css">
+    <link rel="stylesheet" href="../css/login.css">
+    <script src="../js/jquery.min.js"></script>
+    <script src="../js/jquery.mobile-1.4.5.js"></script>
+	<script src="../js/jquerysession.js"></script>
+    <script>
+        var docEl = document.documentElement,
+        resizeEvt = 'orientationchange' in window ? 'orientationchange' : 'resize';
+        var clientWidth = docEl.clientWidth;
+        docEl.style.fontSize = 10 * (clientWidth / 375) + 'px';
+        window.addEventListener(resizeEvt, function() { clientWidth = docEl.clientWidth;docEl.style.fontSize = 10 * (clientWidth / 375) + 'px'; }, false);		
+    </script>
+</head>
+<body>
+	<div data-role="page" class="page">
+		<div data-role="header" class="header">
+			<h1>
+				<img src="../img/login/logo.png" alt="">
+			</h1>
+		</div>
+		<div data-role="main" class="ui-content">
+			<form onkeydown="keyLogin()">
+				<input type="text" name="username" id="uname" placeholder="请输入账号">
+				<input type="password" name="password" id="upwd" placeholder="请输入密码">
+				<p class="forget"><a href="pwd.html">忘记密码？</a></p>
+				<button class="submit" type="button">登录</button>
+				<p class="regist">还没有账号？现在<a href="regist.html">注册</a></p>
+			</form>
+		</div>
+		<div data-role="footer" class="footer">
+			<div class="ui-grid-b">
+				<div class="ui-block-a">
+					<a href="#">
+						<img src="../img/login/微信.png" alt="">
+						<p>微信登录</p>
+					</a>
+				</div>
+				<div class="ui-block-b">
+					<a href="#">
+						<img src="../img/login/QQ.png" alt="">
+						<p>QQ登录</p>
+					</a>
+				</div>
+				<div class="ui-block-c">
+					<a href="phone.html">
+						<img src="../img/login/手机.png" alt="">
+						<p>手机号登录</p>
+					</a>
+				</div>
+			</div>
+		</div>
+	</div>
+	<script src="../layer/layer.js"></script>
+	<script src="../js/login.js"></script>
+</body>
+</html>

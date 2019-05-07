@@ -1,0 +1,115 @@
+//base开始
+html {
+    font-size: 120px;
+}
+body {
+    font-size: 2.2rem;
+}
+body,h1,h2,h3,h4,h5,h6,p,input,ul {
+    margin: 0 !important;
+    padding: 0 !important;
+}
+h1,h2,h3,h4,h5,h6 {
+    font-weight: 300 !important;
+}
+a {
+    display: inline-block !important;
+    text-decoration: none;
+    font-weight: normal !important;
+}
+input {
+    display: inline-block !important;
+}
+* {
+    box-sizing: border-box;
+}
+// base结束
+#page {
+    background-color: #fff;
+}
+// 头部开始
+ .header {
+    position: relative;
+    height: 40rem;
+    background-color: #fff !important;
+    border: none;
+    overflow: hidden;
+    background: url('../img/背景图.png') no-repeat;
+    background-size: 100%;
+    padding-top: 6rem;
+    h1 {
+        font-size: 3.6rem !important;
+        color: #fff;
+    }
+    img {
+        width: 8%;
+        position: absolute;
+        top: 5.3rem;
+        left: 5rem;
+
+        // vertical-align: middle;
+    }
+ }
+// 头部结束
+// 内容开始
+.ui-content {
+    position: relative;
+    padding: 0 5rem;
+    margin-top: -23.2rem;
+    .ui-grid-solo {
+        margin-bottom: 2rem;
+        border-radius: 2.4rem;
+        box-shadow: 0rem 1rem 2.2rem #e1e1e1;
+        // box-shadow: 0rem 0rem 0rem #fff,
+        //             0rem 0rem 2.2rem #e1e1e1,
+        //             0rem 0rem 0rem #fff,
+        //             0rem 1rem 2.2rem #e1e1e1;
+        // box-shadow: -10px 0px 10px red,   /*左边阴影*/ 
+        // 0px -10px 10px #000,  /*上边阴影*/ 
+        // 10px 0px 10px green,  /*右边阴影*/ 
+        // 0px 10px 10px blue;   /*下边阴影*/
+        .ui-block-a {
+            height: 28rem;
+            a {
+                width: 100%;
+                height: 100%;
+                // background-color: skyblue;
+                background-color: #fff;
+            }
+        }
+        .ui-block-a .ui-grid-a {
+            height: 100%;
+            .ui-block-a {
+                height: 100%;
+                font-size: 4rem;
+                text-align: center;
+                line-height: 30rem;
+            }
+            .ui-block-b {
+                position: relative;
+                text-align: center;
+                height: 100%;
+                img {
+                    position: absolute;
+                    top: 50%;
+                    left: 50%;
+                    transform: translate(-50%,-50%);
+                    width: 80%;
+                }
+            }
+        }
+    }
+}
+.blue {
+    font-weight: 500;
+    color: #5f909c;
+}
+.red {
+    font-weight: 500;
+    color: #bd93a3;
+}
+.yellow {
+    font-weight: 500;
+    color: #aa9080;
+}
+// 内容结束

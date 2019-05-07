@@ -1,0 +1,154 @@
+@charset "UTF-8";
+.iconfont {
+  font-family: "Microsoft YaHei";
+  font-size: 16px;
+  font-style: normal;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale; }
+
+.container {
+  font-family: "微软雅黑";
+  display: flex;
+  display: -webkit-flex;
+  flex-direction: column;
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  background: #fff; }
+  .container header {
+    display: inline-flex;
+    display: -webkit-inline-flex;
+    flex-direction: row;
+    justify-content: space-around;
+    position: relative;
+    height: 80px;
+    line-height: 70px;
+    width: 100%;
+    text-align: center;
+    background: #fff; }
+    .container header h3 {
+      font-weight: bold;
+      font-size: 20px; }
+    .container header .left_back {
+      position: absolute;
+      top: 0;
+      left: 8px;
+      cursor: pointer; }
+      .container header .left_back i {
+        font-size: 18px;
+        font-weight: bold;
+        display: block; }
+    .container header .add_book {
+      position: absolute;
+      top: 0;
+      right: 8px;
+      cursor: pointer; }
+      .container header .add_book i {
+        font-size: 20px;
+        font-weight: bold;
+        display: block; }
+  .container main {
+    position: fixed;
+    width: 100%;
+    top: 70px;
+    bottom: 0;
+    z-index: 100;
+    height: 800px; }
+    .container main .book_content {
+      position: relative;
+      box-sizing: border-box;
+      width: 100%;
+      text-align: center; }
+      .container main .book_content li {
+        display: inline-block;
+        position: relative;
+        box-sizing: border-box;
+        width: 30%;
+        padding: 1% 1%; }
+        .container main .book_content li p {
+          font-size: 14px;
+          margin-top: 10px; }
+        .container main .book_content li img {
+          width: 100%;
+          height: 100%; }
+        .container main .book_content li .allbook {
+          position: relative; }
+          .container main .book_content li .allbook .download {
+            width: 25px;
+            height: 25px;
+            position: absolute;
+            bottom: 1.5%;
+            right: 0;
+            z-index: 100; }
+    .container main .none {
+      padding: 80px 0 0 0;
+      text-align: center; }
+      .container main .none img {
+        height: 152px;
+        width: 210px; }
+      .container main .none p {
+        margin-top: 50px;
+        color: #D8DBD7; }
+      .container main .none a button {
+        margin: 30px;
+        border: 0;
+        height: 40px;
+        width: 100px;
+        border-radius: 30px;
+        background: #63B8FF;
+        color: #fff; }
+    .container main article {
+      padding: 10px;
+      margin-bottom: 20px;
+      font-size: 14px;
+      border-bottom: 1px solid #D8DBD7;
+      position: relative; }
+      .container main article span:nth-child(-n+3) {
+        display: inline-block;
+        padding: 8px 10px;
+        background: #D6E8FF;
+        color: #4799ED;
+        border-radius: 15px;
+        font-weight: 400; }
+      .container main article span:last-child {
+        position: absolute;
+        right: 0px;
+        display: inline-block;
+        padding: 8px 10px; }
+  .container .search {
+    display: none;
+    width: 100%;
+    background: #fff;
+    position: absolute;
+    top: 0;
+    z-index: 9999; }
+    .container .search h3 {
+      font-size: 18px;
+      font-weight: bold;
+      padding: 10px; }
+    .container .search .close_search {
+      padding: 15px 15px 5px 15px; }
+    .container .search hr {
+      background: #eee; }
+    .container .search .sc {
+      margin-top: 20px; }
+      .container .search .sc label {
+        display: inline-block;
+        color: #999;
+        font-size: 14px;
+        padding: 10px; }
+      .container .search .sc span {
+        padding: 8px 10px;
+        display: inline-block;
+        border-radius: 15px;
+        font-weight: 400;
+        font-size: 12px;
+        background: #eee;
+        color: #000;
+        margin: 5px 10px; }
+      .container .search .sc .active {
+        background: #D6E8FF;
+        color: #4799ED; }
+
+/*# sourceMappingURL=style.css.map */

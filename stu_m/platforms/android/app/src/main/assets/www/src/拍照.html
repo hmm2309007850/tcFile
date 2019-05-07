@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+    <title></title>
+        <script src="../js/jquery.min.js"></script>
+        <script src="../cordova.js"></script>
+        <script src="../js/sub-page.js"></script>
+		<style>
+        .block {
+            width: 100%;
+            padding: 10px;
+        }
+        #img {
+            width: 30%;
+            margin-right: 20px;
+        }
+    </style>
+</head>
+<body>
+	<div>
+        <button id="openCamera">拍照</button>
+		<div class="block">
+            <img id="img" />
+        </div>
+    </div>
+    <script>
+        cordova.exec(function(msg){
+          alert('test成功了' + msg)
+        }, function(msg){
+          alert('test失败了')
+        }, "Test", "testAction", ['hh']);
+    </script>
+</body>
+</html>

@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1, minimum-scale=1">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <link rel="stylesheet" href="../css/jquery.mobile-1.4.5.css">
+  <link rel="stylesheet" href="../css/answer.css">
+  <script src="../js/jquery.min.js"></script>
+  <script src="../js/jquery.mobile-1.4.5.js"></script>
+</head>
+<body>
+  <script>
+    var docEl = document.documentElement,
+    resizeEvt = 'orientationchange' in window ? 'orientationchange' : 'resize';
+    var clientWidth = docEl.clientWidth;
+    docEl.style.fontSize = 10 * (clientWidth / 760) + 'px';
+    window.addEventListener(resizeEvt, function() { clientWidth = docEl.clientWidth;docEl.style.fontSize = 10 * (clientWidth / 760) + 'px'; }, false);
+
+    // document.documentElement.style.fontSize = document.documentElement.clientWidth / 760*100 + 'px';
+  </script>
+  <div data-role="page" id="page">
+    <!-- 头部 -->
+    <div data-role="header" id="header">
+      <h1><a href="javascript:history.go(-1)">&lt</a> 答题</h1>
+    </div>
+    <!-- 内容 -->
+    <div data-role="main" class="ui-content">
+        <div class="problem">
+            <h5>单选题</h5>
+            <div class="img">
+              <!-- <img src="../img/背景图.png" alt=""> -->
+            </div>
+        </div>
+        <div class="answer">
+            <h5>答题卡</h5>
+            <ul class="choice">
+                <li class="correct">A</li>
+                <li class="error">B</li>
+                <li>C</li>
+                <li>D</li>
+            </ul>
+            <div class="short">
+              <textarea></textarea>
+            </div>
+            <!-- <div class="completion">
+              <input type="text">
+              <input type="text">
+            </div> -->
+        </div>
+        <div class="analysis">
+            <div class="answers">
+                <img src="../img/answer/答案.png" alt="">
+                <span>正确答案:</span>&nbsp;
+                <span class="req">B</span>
+            </div>
+            <div class="analytical">
+                <p>
+                    <img src="../img/answer/解析.png" alt="">
+                    <span>解析</span>
+                </p>
+                <p>中央电视台纪录频道开播初期运营模式：频道化运营模式。目前正在积极推进制播分离模式，以社会招标、联合制作、购买作为主要方式</p>
+            </div>
+        </div>
+    </div>
+    <button>提交</button>
+  </div>
+
+  <script>
+      $('.answer ul').on('tap','li',function(){
+        $(this).css('color','#d0021b').siblings().css('color','');
+        $(this).css('border','1px solid #d0021b').siblings().css('border','');
+      });
+
+      $('button').on('tap',function(){
+          $('.analysis').show();
+          $('button').hide();
+      });
+  </script>
+</body>
+</html>

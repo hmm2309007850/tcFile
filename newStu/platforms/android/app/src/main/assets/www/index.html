@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="initial-scale=1,maximum-scale=1, minimum-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/jquery.mobile-1.4.5.css">
+    <link rel="stylesheet" href="css/index.css">
+    <script src="js/jquery.min.js"></script>
+    <script src="js/jquery.mobile-1.4.5.js"></script>
+    <script src="js/less.min.js"></script>
+    <script src="js/index.js"></script>
+    <script>
+        var docEl = document.documentElement,
+        resizeEvt = 'orientationchange' in window ? 'orientationchange' : 'resize';
+        var clientWidth = docEl.clientWidth;
+        docEl.style.fontSize = 10 * (clientWidth / 760) + 'px';
+        window.addEventListener(resizeEvt, function() { clientWidth = docEl.clientWidth;docEl.style.fontSize = 10 * (clientWidth / 760) + 'px'; }, false);
+
+        // document.documentElement.style.fontSize = document.documentElement.clientWidth / 760*100 + 'px';
+    </script>
+</head>
+<body>
+	<div data-role="page" id="page">
+		<!-- 头部 -->
+		<div data-role="header" class="header">
+			<img src="img/头像.png" alt="">
+			<h1>e学e教</h1>
+		</div>
+		<!-- 内容 -->
+		<div data-role="main" class="ui-content">
+			<div class="ui-grid-solo solo1">
+					<div class="ui-block-a">
+						<a href="">
+							<div class="ui-grid-a">
+								<div class="ui-block-a">
+										<span class="blue" style="font-family: '汉仪菱心体简'">课上交互</span>
+								</div>
+								<div class="ui-block-b">
+										<img src="img/课上交互.png" alt="">
+								</div>
+							</div>
+						</a>
+					</div>
+			</div>
+			<div class="ui-grid-solo">
+				<div class="ui-block-a">
+					<a href="#">
+						<div class="ui-grid-a">
+							<div class="ui-block-a">
+									<span class="red" style="font-family: '汉仪菱心体简'">我的作业</span>
+							</div>
+							<div class="ui-block-b">
+									<img src="img/作业.png" alt="">
+							</div>
+						</div>
+					</a>
+				</div>
+			</div>
+			<div class="ui-grid-solo">
+				<div class="ui-block-a">
+					<a href="#">
+						<div class="ui-grid-a">
+							<div class="ui-block-a">
+									<span class="yellow" style="font-family: '汉仪菱心体简'">资源展示</span>
+							</div>
+							<div class="ui-block-b">
+									<img src="img/资源.png" alt="">
+							</div>
+						</div>
+					</a>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+</html>
